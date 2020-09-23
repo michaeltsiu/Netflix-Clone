@@ -14,6 +14,7 @@ function App() {
     const hash = getTokenFromUrl();
     window.location.hash = "";
     const _token = hash.access_token;
+
     if (_token) {
       setToken(_token)
       spotify.setAccessToken(_token);
@@ -21,8 +22,9 @@ function App() {
         console.log('user: ', user);
       })
     }
+
     console.log('I HAVE A TOKEN: ', token);
-  }, []);
+  }, [token]);
 
   return (
     <div className="app">
