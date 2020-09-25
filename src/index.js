@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './styling/index.css';
 import App from './components/App';
 import * as serviceWorker from './extra/serviceWorker';
+import { DataLayer } from './DataLayer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DataLayer initialState reducer>
+      <App />
+    </DataLayer>
   </React.StrictMode>,
   document.getElementById('app')
 );
