@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './styling/index.css';
 import App from './components/App';
 import * as serviceWorker from './extra/serviceWorker';
-import { DataLayer } from './DataLayer';
-import reducer, { initialState } from './reducer';
+import { DataLayer } from './extra/DataLayer';
+import reducer, { initialState } from './extra/reducer';
 
 
 ReactDOM.render(

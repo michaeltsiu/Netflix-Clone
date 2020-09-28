@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import SpotifyWebApi from "spotify-web-api-js";
 
 import { getTokenFromUrl } from '../extra/spotify'
-import { useDataLayerValue } from '../DataLayer';
+import { useDataLayerValue } from '../extra/DataLayer';
 
 import '../styling/App.css';
 import Login from './Login';
@@ -37,6 +37,13 @@ function App() {
       dispatch({
         type: 'SET_PLAYLISTS',
           playlists: playlists
+      })
+    })
+
+    spotify.getPlaylist('37i9dQZEVXcVTwvkyQ5PrM').then((response) => {
+      dispatch({
+        type: 'SET_DISCOVER_WEEKLY',
+          discover_weekly: response
       })
     })
   }, [dispatch, token]);
